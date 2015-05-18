@@ -1,0 +1,26 @@
+{
+  "name": "xfornesa/kata-bdd-by-example-php",
+  "description": "Kata BDD & DDD in PHP",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "require": {
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*",
+    "phpmd/phpmd" : "@stable",
+    "phpunit/phpunit": "4.*@stable",
+    "behat/behat": "~3.0.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "MyTaste\\": "src/MyTaste/",
+      "MyTaste\\Context\\": "features/bootstrap/"
+    },
+    "psr-4-dev": {
+      "Tests\\MyTaste\\": "tests/MyTaste/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}
