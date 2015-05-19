@@ -68,10 +68,10 @@ class FeatureContext implements Context, SnippetAcceptingContext
     public function theRecipeIsAddedToCookbookNamed($recipeTitle, $userName, $cookbookName)
     {
         // the recipe with title ...
-        $aRecipe = $this->recipes->byTitle($recipeTitle);
+        $aRecipe = $this->recipes->recipeByTitle($recipeTitle);
 
         // the :userName's cookbook named ...
-        $aUser = $this->users->byName($userName);
+        $aUser = $this->users->userByName($userName);
         $cookbook = $aUser->cookbookByName($cookbookName);
 
         // the recipe ... is added to ... cookbook
@@ -84,11 +84,11 @@ class FeatureContext implements Context, SnippetAcceptingContext
     public function theCookbookShouldContainTheRecipe($userName, $cookbookName, $recipeTitle)
     {
         // the user's cookbook named ...
-        $aUser = $this->users->byName($userName);
+        $aUser = $this->users->userByName($userName);
         $cookbook = $aUser->cookbookByName($cookbookName);
 
         // the recipe of title ...
-        $aRecipe = $this->recipes->byTitle($recipeTitle);
+        $aRecipe = $this->recipes->recipeByTitle($recipeTitle);
 
         // cookbook ... should contain the recipe
         $recipeFound = $cookbook->recipeByTitle($recipeTitle);
